@@ -25,7 +25,7 @@ static int join_path(char *out, int outsz, const char *parent, const char *child
     return 0;
 }
 
-// Phần 1: du(path) - CHỈ TÍNH tổng bytes, không in gì
+//Part 1: du(path) - just calculate total bytes, do not print anything
 static long du(const char *path)
 {
     int fd = open(path, O_RDONLY);
@@ -72,7 +72,7 @@ static long du(const char *path)
     return total;
 }
 
-// Phần 2: print_du(path) - Duyệt và IN theo option -a
+//Part 2: print_du(path) - Iterating and print 
 static void print_du(const char *path, int is_root)
 {
     int fd = open(path, O_RDONLY);
